@@ -1,0 +1,9 @@
+@use 'dimension_vars' as *;
+@use 'colors' as *;
+
+@mixin sans-serif-base {
+   font-family: 'Catamaran', sans-serif;
+   font-size: $base-size;
+
+   @include dark-bg-text-base;
+ }

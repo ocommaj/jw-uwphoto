@@ -1,0 +1,4 @@
+@mixin simple-hover-timing {
+  transition-duration: 0.6s;
+  transition-timing-function: ease;
+}

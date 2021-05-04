@@ -1,0 +1,21 @@
+@use '../Base/button_base' as *;
+@use '../Abstracts/dimension_vars' as *;
+
+.nav-bar-button {
+    @include button-base-size-up;
+    @include underlinable-button;
+    padding: $base-down-2 $base-up-1;
+    margin: $base-down-4;
+}
+
+.nav-bar-button:hover {
+  @include button-base-hover;
+}
+
+.nav-bar-button::after {
+  @include button-underline;
+}
+
+.nav-bar-button:hover::after {
+  @include button-underline-hover;
+}

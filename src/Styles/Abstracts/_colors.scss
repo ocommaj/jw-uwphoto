@@ -1,0 +1,14 @@
+$base-color: #040530;   // <-- 'Black Rock'
+$white-color: #D7D9DF;  // <-- 'Mischka'
+$drama-color: #044193;  // <-- 'Congress Blue'
+$accent-color: #10BEF3; // <-- 'Bright Turquoise'
+
+@mixin dark-bg-text-base {
+  background-color: $base-color;
+  color: $white-color;
+}
+
+@mixin dark-bg-text-base-hover-color {
+  background-color: $drama-color;
+  color: $accent-color;
+}
