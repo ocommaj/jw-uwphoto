@@ -5,13 +5,11 @@ function App() {
   return (
     <div className="App">
       <NavBar />
-
+      <main className="Main">
+        
+      </main>
     </div>
-
   );
 }
 
 export default App;
-
-
-//<BioSection />

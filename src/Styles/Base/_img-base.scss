@@ -5,6 +5,11 @@
   from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
 }
 
+@mixin gradient-fade-from-left {
+  -webkit-mask-image: -webkit-gradient(linear, left center, right center,
+  from(rgba(0,0,0,.8)), to(rgba(0,0,0,0)));
+}
+
 
 .hero-img {
   height: 100vh;
@@ -20,6 +25,14 @@
   right: 0;
 }
 
+.hero-img--left-side {
+  left: 0;
+}
+
 .hero-img--right-side.gradient-fade {
   @include gradient-fade-from-right;
+}
+
+.hero-img--left-side.gradient-fade {
+  @include gradient-fade-from-left;
 }

@@ -2,51 +2,83 @@
 @use '../Base/_button-base' as *;
 
 .nav-bar {
-  margin-top: $base-down-1;
-  background-color: rgba($drama-color, .6);
-  display: inline-block;
-  padding: $base-down-1;
-  backdrop-filter: blur($base-up-2);
-
-  border: solid $base-down-4 rgba($accent-color, .4);
-  border-top: none;
-  border-right: none;
-
-  border-top-right-radius: $base-down-2;
-  border-bottom-right-radius: $base-down-2;
-
-  position: relative;
-  z-index: 500;
-
-  cursor: pointer;
-  pointer-events: none;
+  position: absolute;
+  height: 4rem;
+  top: $base-size;
+  right: $base-size;
 }
 
-.nav-bar::before {
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
+.nav-bar-toggler {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1000;
+
+  width: 4rem;
+  background-color: rgba($drama-color, .6);
+  border-top-right-radius: $base-down-2;
+  border-bottom-right-radius: $base-down-2;
+  border: solid $base-down-4 rgba($accent-color, .4);
+  border-right: none;
+  border-top: none;
+
   font-size: $base-up-4;
-  content: "\f0c9";
   padding: $base-size 0;
+  padding-top: $base-size - .1rem;
   color: $accent-color;
 
-  position: absolute;
-  width: 4rem;
-  top: 0;
-  bottom: -$base-down-4;
-  left: -4rem - $base-down-4;
-  z-index: 500;
-  background-color: rgba($drama-color, .6);
-  border-top-left-radius: $base-down-2;
-  border-bottom-left-radius: $base-down-2;
-  border: none;
-  border-bottom: solid $base-down-4 rgba($accent-color, .4);
-
-  pointer-events: all;
+  cursor: pointer;
 
   @include simple-hover-timing;
 }
 
-.nav-bar:hover::before {
+.nav-bar-toggler:hover,
+.nav-bar.expand:hover .nav-bar-toggler {
   color: $white-color;
+}
+
+.nav-bar.collapse .nav-bar-toggler {
+  border-radius: $base-down-2;
+  border-left: none;
+}
+
+.nav-overflow-wrapper {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 4rem;
+}
+
+//.nav-overflow-wrapper
+
+.nav-buttons {
+  background-color: rgba($drama-color, .6);
+  padding: $base-down-1;
+  backdrop-filter: blur($base-up-2);
+
+  border-bottom: solid $base-down-4 rgba($accent-color, .4);
+  border-top-left-radius: $base-down-2;
+  border-bottom-left-radius: $base-down-2;
+
+  cursor: pointer;
+  pointer-events: none;
+
+  display: flex;
+  width: auto;
+
+  @include simple-hover-timing;
+}
+
+.nav-bar.collapse .nav-buttons {
+  transform: translateX(50vw);
+}
+
+.nav-buttons.collapse {
+  transform: translateX(-100%);
+
+  .nav-bar-button {
+    opacity: 0;
+  }
 }

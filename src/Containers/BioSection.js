@@ -1,7 +1,7 @@
 import React from 'react';
 import '../Styles/Containers/_top-level-content-section.scss';
 
-import HERO_PORTRAIT from '../Assets/images/jw_sideon_bio.jpg';
+import HERO_PORTRAIT from '../Assets/images/jw_sideon_right.jpg';
 
 export function BioSection() {
   return (
