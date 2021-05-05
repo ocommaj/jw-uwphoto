@@ -13,12 +13,13 @@
   border-right: none;
 
   border-top-right-radius: $base-down-2;
+  border-bottom-right-radius: $base-down-2;
 
   position: relative;
+  z-index: 500;
 
   cursor: pointer;
   pointer-events: none;
-
 }
 
 .nav-bar::before {
@@ -37,6 +38,7 @@
   z-index: 500;
   background-color: rgba($drama-color, .6);
   border-top-left-radius: $base-down-2;
+  border-bottom-left-radius: $base-down-2;
   border: none;
   border-bottom: solid $base-down-4 rgba($accent-color, .4);
 
@@ -46,6 +48,5 @@
 }
 
 .nav-bar:hover::before {
-  //pointer-events: all;
   color: $white-color;
 }

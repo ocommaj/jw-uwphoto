@@ -1,0 +1,25 @@
+@use '../Abstracts/colors' as *;
+
+@mixin gradient-fade-from-right {
+  -webkit-mask-image: -webkit-gradient(linear, right top, left bottom,
+  from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+}
+
+
+.hero-img {
+  height: 100vh;
+  position: absolute;
+  top: 0;
+
+  img {
+    height: inherit;
+  }
+}
+
+.hero-img--right-side {
+  right: 0;
+}
+
+.hero-img--right-side.gradient-fade {
+  @include gradient-fade-from-right;
+}

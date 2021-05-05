@@ -1,13 +1,17 @@
 import './Styles/App/index.scss';
-import { NavBar } from './Containers';
+import { NavBar, BioSection } from './Containers';
 
 function App() {
   return (
     <div className="App">
       <NavBar />
+
     </div>
 
   );
 }
 
 export default App;
+
+
+//<BioSection />
