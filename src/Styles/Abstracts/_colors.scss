@@ -5,10 +5,12 @@ $accent-color: #10BEF3; // <-- 'Bright Turquoise'
 
 @mixin dark-bg-text-base {
   background-color: $base-color;
-  color: $white-color;
+  //color: $white-color;
+  color: lighten($accent-color, .5);
 }
 
 @mixin dark-bg-text-base-hover-color {
   background-color: $drama-color;
-  color: $accent-color;
+  //color: darken($accent-color, .5);
+  color: $white-color;
 }

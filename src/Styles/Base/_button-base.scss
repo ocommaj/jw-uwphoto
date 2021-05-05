@@ -3,6 +3,7 @@
 @mixin button-base {
   border: none;
   outline: none;
+  font-weight: bold;
   cursor: pointer;
   @include sans-serif-base;
   @include simple-hover-timing;
@@ -14,6 +15,7 @@
 }
 
 @mixin button-base-hover {
+  font-weight: bolder;
   @include dark-bg-text-base-hover-color;
 }
 
@@ -29,6 +31,7 @@
     top: 105%;
     left: 0%;
     background-color: rgba($accent-color, 0);
+    border-radius: $base-down-3;
     @include simple-hover-timing;
 }
 
