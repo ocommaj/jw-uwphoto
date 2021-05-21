@@ -1,0 +1,1 @@
+export { useClickOutsideDetector } from './useClickOutsideDetector'

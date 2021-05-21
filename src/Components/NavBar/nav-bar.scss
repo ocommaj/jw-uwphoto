@@ -1,5 +1,5 @@
-@use '../Abstracts' as *;
-@use '../Base/_button-base' as *;
+@use '../../styles/Abstracts' as *;
+@use '../../styles/Base/_button-base' as *;
 
 .nav-bar {
   position: absolute;
@@ -50,8 +50,6 @@
   bottom: 0;
   right: 4rem;
 }
-
-//.nav-overflow-wrapper
 
 .nav-buttons {
   background-color: rgba($drama-color, .6);

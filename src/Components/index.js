@@ -1,1 +1,2 @@
-export { NavButton } from './NavButton.js'
+export { NavBar } from './NavBar'
+export { NavButton } from './NavButton'

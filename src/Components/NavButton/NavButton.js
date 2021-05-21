@@ -1,7 +1,7 @@
 import React from 'react';
-import '../Styles/Components/index.scss'
+import './nav-button.scss'
 
-export function NavButton({ props }) {
+export function NavButton( props ) {
   const { label } = props
 
   return (

@@ -1,5 +1,5 @@
-@use '../Base/button-base' as *;
-@use '../Abstracts/dimension-vars' as *;
+@use '../../Styles/Base/button-base' as *;
+@use '../../Styles/Abstracts/dimension-vars' as *;
 
 .nav-bar-button {
     @include button-base-size-up;
