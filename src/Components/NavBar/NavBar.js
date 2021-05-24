@@ -10,7 +10,7 @@ const MENUS = {
       { id: "bio", label: "About" },
       { id: "gallery", label: "Gallery" },
       { id: "book", label: "Appearances" },
-      { id: "enquiries", label: "Enquiries" }
+      { id: "contact", label: "Enquiries" }
     ]
   },
   socials: {
@@ -30,21 +30,26 @@ export function NavBar(props) {
 
   const menu = MENUS[id]
   const { buttons } = menu
+  const { active, setActive } = !!navState && navState
+  const className = !!toggleOpen ? 'nav-bar expand' : 'nav-bar collapse'
 
   useClickOutsideDetector(navBarRef, clickOutside)
 
   return (
     <>
-      <nav
-        className={ toggleOpen ? 'nav-bar expand' : 'nav-bar collapse' }
-        ref={ navBarRef }>
+      <nav className={ className } ref={ navBarRef }>
         <button className='nav-bar-toggler' onClick={ barToggler }>
           <i className={ menu.glyph.name }/>
         </button>
         <span className = 'nav-overflow-wrapper'>
           <span className = 'nav-buttons'>
-            { buttons.map((b) => {
-              return <NavButton key={`nav_${b.id}`} { ...b }/> })
+            { buttons.map((btn) =>
+              <NavButton
+                key={`nav_${btn.id}`}
+                isActive={ !!active && btn.id === active }
+                setActive={ !!setActive && setActive }
+                { ...btn }
+                /> )
             }
           </span>
         </span>
@@ -57,10 +62,7 @@ export function NavBar(props) {
   }
 
   function clickOutside() {
-    if (!!toggleOpen) {
-      setToggleOpen(pastState => !pastState)
-    } else {
-      return
-    }
+    if (!toggleOpen) return
+    setToggleOpen(pastState => !pastState)
   }
 }

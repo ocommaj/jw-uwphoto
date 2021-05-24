@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import './Styles/App/index.scss';
 import { NavBar } from './Components';
+import { MainContentContainer } from './Containers'
+import { ContactSection } from './ContentSections'
 
 function App() {
   const [ activeSection, setActiveSection ] = useState(null);
@@ -10,10 +12,10 @@ function App() {
   return (
     <div className="App">
       <NavBar id={ "topNav" } navState={ topNavState }/>
-      <NavBar id={ "socials" } navState={ topNavState }/>
-      <main className="Main">
-
-      </main>
+      <NavBar id={ "socials" } />
+      <MainContentContainer>
+        { activeSection === 'contact' && <ContactSection /> }
+      </MainContentContainer>
     </div>
   );
 }

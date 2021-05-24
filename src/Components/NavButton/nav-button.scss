@@ -23,3 +23,8 @@
 .nav-bar-button:hover::after {
   @include button-underline-hover;
 }
+
+.nav-bar-button.active::after {
+  @include button-underline-hover;
+  background-color: $smoke;
+}
