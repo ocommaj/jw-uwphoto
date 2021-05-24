@@ -3,12 +3,14 @@ import './Styles/App/index.scss';
 import { NavBar } from './Components';
 
 function App() {
-  const [ activeSectionId, setActiveSectionId ] = useState(null);
+  const [ activeSection, setActiveSection ] = useState(null);
+
+  const topNavState = { active: activeSection, setActive: setActiveSection };
 
   return (
     <div className="App">
-      <NavBar />
-
+      <NavBar id={ "topNav" } navState={ topNavState }/>
+      <NavBar id={ "socials" } navState={ topNavState }/>
       <main className="Main">
 
       </main>

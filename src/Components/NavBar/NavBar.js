@@ -3,19 +3,35 @@ import { NavButton } from '../NavButton';
 import { useClickOutsideDetector } from '../../Hooks';
 import './nav-bar.scss';
 
-const BUTTONS = [
-  { id: "bio", label: "About" },
-  { id: "gallery", label: "Gallery" },
-  { id: "book", label: "Appearances" },
-  { id: "enquiries", label: "Enquiries" },
-]
+const MENUS = {
+  topNav: {
+    glyph: { name: "fas fa-bars", size: 64 },
+    buttons: [
+      { id: "bio", label: "About" },
+      { id: "gallery", label: "Gallery" },
+      { id: "book", label: "Appearances" },
+      { id: "enquiries", label: "Enquiries" }
+    ]
+  },
+  socials: {
+    glyph: { name: "fas fa-at", size: 48 },
+    buttons: [
+      { id: "fb", label: "fab fa-facebook-square", isIcon: true },
+      { id: "tw", label: "fab fa-twitter-square", isIcon: true },
+      { id: "ig", label: "fab fa-instagram-square", isIcon: true }
+    ]
+  }
+}
 
 export function NavBar(props) {
-  const { activeSectionId, setActiveSectionId } = props;
+  const { id, navState=null } = props;
   const [ toggleOpen, setToggleOpen ] = useState(false);
   const navBarRef = useRef()
 
-  useClickOutsideDetector(navBarRef, barToggler)
+  const menu = MENUS[id]
+  const { buttons } = menu
+
+  useClickOutsideDetector(navBarRef, clickOutside)
 
   return (
     <>
@@ -23,13 +39,13 @@ export function NavBar(props) {
         className={ toggleOpen ? 'nav-bar expand' : 'nav-bar collapse' }
         ref={ navBarRef }>
         <button className='nav-bar-toggler' onClick={ barToggler }>
-          <i class="fas fa-bars"/>
+          <i className={ menu.glyph.name }/>
         </button>
         <span className = 'nav-overflow-wrapper'>
           <span className = 'nav-buttons'>
-            {BUTTONS.map((btn) => {
-              return <NavButton key={`nav_${btn.id}`} { ...btn }/>
-            })}
+            { buttons.map((b) => {
+              return <NavButton key={`nav_${b.id}`} { ...b }/> })
+            }
           </span>
         </span>
       </nav>
@@ -37,6 +53,14 @@ export function NavBar(props) {
   )
 
   function barToggler() {
-    setToggleOpen(!toggleOpen)
+    setToggleOpen(prevState => !prevState)
+  }
+
+  function clickOutside() {
+    if (!!toggleOpen) {
+      setToggleOpen(pastState => !pastState)
+    } else {
+      return
+    }
   }
 }

@@ -1,5 +1,5 @@
 @use '../../Styles/Base/button-base' as *;
-@use '../../Styles/Abstracts/dimension-vars' as *;
+@use '../../Styles/Abstracts' as *;
 
 .nav-bar-button {
     @include button-base-size-up;
@@ -9,6 +9,7 @@
     border-radius: $base-down-3;
 
     pointer-events: all;
+    @include small-shadow;
 }
 
 .nav-bar-button:hover {

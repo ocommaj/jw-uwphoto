@@ -3,6 +3,24 @@ $white-color: #D7D9DF;  // <-- 'Mischka'
 $drama-color: #044193;  // <-- 'Congress Blue'
 $accent-color: #10BEF3; // <-- 'Bright Turquoise'
 
+$darker: #121217;
+$dark: #17171d;
+$darkless: #252429;
+$black: #1f2d3d;
+$steel: #273444;
+$slate: #3c4858;
+$muted: #8492a6;
+$smoke: #e0e6ed;
+$snow: #f9fafc;
+$white: #ffffff;
+$red: #ec3750;
+$orange: #ff8c37;
+$yellow: #f1c40f;
+$green: #33d6a6;
+$cyan: #5bc0de;
+$blue: #338eda;
+$purple: #a633d6;
+
 @mixin dark-bg-text-base {
   background-color: $base-color;
   color: lighten($accent-color, .5);
