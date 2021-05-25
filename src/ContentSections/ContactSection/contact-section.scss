@@ -1,0 +1,43 @@
+@use '../../Styles/Abstracts' as *;
+@use '../../Styles/Base/button-base' as *;
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  padding: $base-size;
+
+  label {
+    color: $blue;
+    margin-bottom: $base-down-2;
+  }
+
+  input {
+    margin-bottom: $base-down-1;
+  }
+
+  textarea {
+    margin: 0;
+    margin-top: 0;
+  }
+
+  input,
+  textarea {
+    background-color: $slate;
+    color: $smoke;
+    border-radius: $base-down-3;
+    @include inset-shadow-steel;
+  }
+
+  button {
+    @include button-base-size-up;
+    margin-top: $base-size;
+    padding: $base-down-2;
+    border-radius: $base-down-3;
+    color: $blue;
+    background-color: $steel;
+  }
+
+  button:hover {
+    @include button-base-hover;
+  }
+}

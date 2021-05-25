@@ -13,3 +13,7 @@
 @mixin elevated-shadow {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.0625), 0 8px 12px rgba(0, 0, 0, 0.125);
 }
+
+@mixin inset-shadow-steel {
+  box-shadow: inset 0 0 8px 4px rgba(0, 0, 0, .125);
+}

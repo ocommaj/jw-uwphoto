@@ -1,7 +1,15 @@
 @use '../../styles/Abstracts' as *;
 
 .jumbotron {
-  background-color: red;
-  height: 50vh;
-  width: 100%;
+  //height: 50vh;
+  width: 50%;
+  margin: auto;
+  margin-right: 0;
+
+  background-color: $drama-color;
+  border-radius: $base-size;
+  @include card-shadow;
+  @include translucent-dark;
+
+  padding: $base-size;
 }

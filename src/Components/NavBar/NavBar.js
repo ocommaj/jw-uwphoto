@@ -16,9 +16,9 @@ const MENUS = {
   socials: {
     glyph: { name: "fas fa-at", size: 48 },
     buttons: [
+      { id: "ig", label: "fab fa-instagram-square", isIcon: true },
       { id: "fb", label: "fab fa-facebook-square", isIcon: true },
-      { id: "tw", label: "fab fa-twitter-square", isIcon: true },
-      { id: "ig", label: "fab fa-instagram-square", isIcon: true }
+      { id: "tw", label: "fab fa-twitter-square", isIcon: true }  
     ]
   }
 }
