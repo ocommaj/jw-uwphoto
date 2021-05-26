@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Styles/App/index.scss';
 import { NavBar } from './Components';
 import { MainContentContainer } from './Containers'
-import { ContactSection } from './ContentSections'
+import { ContactSection, GallerySection } from './ContentSections'
 
 function App() {
   const [ activeSection, setActiveSection ] = useState(null);
@@ -15,6 +15,7 @@ function App() {
       <NavBar id={ "socials" } />
       <MainContentContainer>
         { activeSection === 'contact' && <ContactSection /> }
+        { activeSection === 'gallery' && <GallerySection /> }
       </MainContentContainer>
     </div>
   );

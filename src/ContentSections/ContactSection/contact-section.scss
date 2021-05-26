@@ -1,6 +1,10 @@
 @use '../../Styles/Abstracts' as *;
 @use '../../Styles/Base/button-base' as *;
 
+.jumbotron.contact-section {
+  width: 50%;
+}
+
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -22,10 +26,16 @@
 
   input,
   textarea {
-    background-color: $slate;
+    background: linear-gradient(120deg, $steel, $slate);
     color: $smoke;
     border-radius: $base-down-3;
+    border: solid 1px rgba($smoke, 0);
     @include inset-shadow-steel;
+  }
+
+  input:focus,
+  textarea:focus {
+    border: solid 1px $smoke;
   }
 
   button {

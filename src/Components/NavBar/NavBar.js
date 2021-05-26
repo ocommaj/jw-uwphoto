@@ -10,7 +10,7 @@ const MENUS = {
       { id: "bio", label: "About" },
       { id: "gallery", label: "Gallery" },
       { id: "book", label: "Appearances" },
-      { id: "contact", label: "Enquiries" }
+      { id: "contact", label: "Contact" }
     ]
   },
   socials: {
@@ -18,7 +18,7 @@ const MENUS = {
     buttons: [
       { id: "ig", label: "fab fa-instagram-square", isIcon: true },
       { id: "fb", label: "fab fa-facebook-square", isIcon: true },
-      { id: "tw", label: "fab fa-twitter-square", isIcon: true }  
+      { id: "tw", label: "fab fa-twitter-square", isIcon: true }
     ]
   }
 }

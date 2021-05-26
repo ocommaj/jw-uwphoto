@@ -4,7 +4,7 @@ import './contact-section.scss';
 
 export function ContactSection() {
   return (
-    <Jumbotron className="contact-section">
+    <Jumbotron props={ { className: "contact-section" } }>
       <form className="contact-form">
         <label htmlFor="name">Name</label>
         <input id="name" type="text" placeholder="Name"/>

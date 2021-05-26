@@ -18,6 +18,7 @@
 
 @mixin button-base-hover {
   font-weight: bolder;
+  @include simple-hover-timing;
   @include dark-bg-text-base-hover-color;
 }
 

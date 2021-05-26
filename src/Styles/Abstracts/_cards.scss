@@ -1,9 +1,10 @@
 @use './colors' as *;
 
 @mixin translucent-dark {
-  background-color: rgba($dark, 0.875);
+  //background-color: rgba($dark, 0.875);
+  background: linear-gradient(120deg, rgba($dark, 0.325), rgba($dark, 0.625));
   @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-    background-color: rgba($dark, 0.625);
+    background: linear-gradient(120deg, rgba($dark, 0.325), rgba($dark, 0.625));
     backdrop-filter: saturate(180%) blur(16px);
     -webkit-backdrop-filter: saturate(180%) blur(16px);
   }
