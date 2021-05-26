@@ -17,6 +17,7 @@ function App() {
         { activeSection === 'contact' && <ContactSection /> }
         { activeSection === 'gallery' && <GallerySection /> }
       </MainContentContainer>
+
     </div>
   );
 }

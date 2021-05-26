@@ -12,7 +12,12 @@
 }
 
 .nav-bar-button:hover {
-  @include button-base-hover;
+  color: $white-color;
+  font-weight: bolder;
+}
+
+.nav-bar-button::before {
+  border-radius: $base-down-3;
 }
 
 .nav-bar-button::after {

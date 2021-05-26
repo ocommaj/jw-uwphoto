@@ -28,6 +28,5 @@ $purple: #a633d6;
 
 @mixin dark-bg-text-base-hover-color {
   color: $white-color;
-  background: linear-gradient(to right, $drama-color, darken($drama-color, 5));
-
+  background: linear-gradient(to right, $drama-color, darken($drama-color, 10));
 }

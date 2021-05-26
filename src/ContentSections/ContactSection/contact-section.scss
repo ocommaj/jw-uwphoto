@@ -47,7 +47,12 @@
     background-color: $steel;
   }
 
+  button::before {
+    border-radius: $base-down-3;
+  }
+
   button:hover {
-    @include button-base-hover;
+    color: $white-color;
+    font-weight: bolder;
   }
 }

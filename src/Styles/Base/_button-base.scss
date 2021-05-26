@@ -9,17 +9,36 @@
   @include simple-hover-timing;
   @include small-shadow;
   @include text-shadow;
+
+  @include gradient-button-background
+}
+
+@mixin gradient-button-background {
+  position: relative;
+  z-index: 1;
+  @include dark-bg-text-base;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    opacity: 0;
+    @include simple-hover-timing;
+    @include dark-bg-text-base-hover-color;
+  }
+
+  &:hover::before {
+    opacity: 1;
+  }
 }
 
 @mixin button-base-size-up {
   @include button-base;
   font-size: $base-up-2;
-}
-
-@mixin button-base-hover {
-  font-weight: bolder;
-  @include simple-hover-timing;
-  @include dark-bg-text-base-hover-color;
 }
 
 @mixin underlinable-button {
