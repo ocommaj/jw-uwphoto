@@ -10,34 +10,6 @@
   flex-direction: column;
   padding: $base-size;
 
-  label {
-    color: $blue;
-    margin-bottom: $base-down-2;
-  }
-
-  input {
-    margin-bottom: $base-down-1;
-  }
-
-  textarea {
-    margin: 0;
-    margin-top: 0;
-  }
-
-  input,
-  textarea {
-    background: linear-gradient(120deg, $steel, $slate);
-    color: $smoke;
-    border-radius: $base-down-3;
-    border: solid 1px rgba($smoke, 0);
-    @include inset-shadow-steel;
-  }
-
-  input:focus,
-  textarea:focus {
-    border: solid 1px $smoke;
-  }
-
   button {
     @include button-base-size-up;
     margin-top: $base-size;
@@ -55,4 +27,62 @@
     color: $white-color;
     font-weight: bolder;
   }
+}
+
+.styled-input {
+  @include simple-hover-timing;
+  background: linear-gradient(120deg, $steel, $slate);
+  color: $smoke;
+  border: none;
+  width: 100%;
+
+
+  @include inset-shadow-steel;
+}
+
+.styled-label {
+  position: relative;
+  font-size: $base-size;
+  margin-bottom: $base-size;
+  border-top: $base-size solid transparent;
+  height: auto;
+}
+
+.placeholder {
+  position: absolute;
+  left: $base-down-2;
+  top: 50%;
+  color: lighten($slate, 40);
+  transform: translateY(-50%);
+  @include simple-hover-timing;
+}
+
+.styled-input:not(:placeholder-shown) + .placeholder,
+.styled-label:focus-within .placeholder {
+  top: -$base-down-1;
+  left: 0;
+  color: $blue;
+}
+
+textarea.styled-input + .placeholder {
+  top: $base-size;
+}
+
+.styled-label::after {
+  content: "";
+  position: absolute;
+  top: 110%;
+  height: 2px;
+  border: none;
+  left: 48%;
+  right: 48%;
+  @include simple-hover-timing;
+}
+
+.styled-label:focus-within::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  background-color: $blue;
 }
