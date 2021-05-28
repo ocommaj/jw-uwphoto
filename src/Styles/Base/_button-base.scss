@@ -52,12 +52,12 @@
     height: $base-down-4;
     top: 105%;
     left: 0%;
-    background-color: rgba($accent-color, 0);
+    background-color: rgba($blue, 0);
     border-radius: $base-down-3;
     @include simple-hover-timing;
 }
 
 @mixin button-underline-hover {
-  background-color: rgba($accent-color, 1);
+  background-color: rgba($blue, 1);
   width: 100%;
 }

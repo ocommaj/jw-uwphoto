@@ -30,5 +30,6 @@
 
 .nav-bar-button.active::after {
   @include button-underline-hover;
-  background-color: $smoke;
+  //background-color: $smoke;
+  background-color: $accent-color;
 }

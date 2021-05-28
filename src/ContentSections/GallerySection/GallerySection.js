@@ -1,9 +1,12 @@
 import React from 'react'
-import { Jumbotron } from '../../Components'
+import { ImageCard } from '../../Components'
 
 export function GallerySection() {
   return (
-    <Jumbotron props={ { className: 'gallery-section' } }>
-    </Jumbotron>
+    <>
+      <ImageCard />
+    </>
   )
 }
+
+//<Jumbotron props={ { className: 'gallery-section' } }></Jumbotron>

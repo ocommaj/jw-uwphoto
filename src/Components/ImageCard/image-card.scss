@@ -1,0 +1,30 @@
+@use '../../Styles/Abstracts' as *;
+
+.image-card-circle {
+  position: relative;
+  width: 12vw;
+  height: 12vw;
+  border-radius: 50%;
+  background-color: $darkless;
+  @include card-shadow;
+
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  //padding: $base-size;
+
+  ul {
+    margin: auto;
+    padding: $base-size;
+    margin-left: $base-size;
+  }
+}
+
+.image-card-circle::before {
+  content: "";
+  width: 12vw;
+  height: 12vw;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 2px $base-color, inset 0 0 0 8px $blue, inset 0 0 0 16px $darkless;
+  position: absolute;
+}

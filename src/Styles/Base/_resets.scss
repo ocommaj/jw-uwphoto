@@ -1,5 +1,8 @@
+@use '../Abstracts' as *;
+
 :root {
   font-family: 'Overpass';
+  color: $white-color;
 }
 
 *, *:before, *:after {
