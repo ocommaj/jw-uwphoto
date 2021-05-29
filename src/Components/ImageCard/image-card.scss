@@ -2,29 +2,79 @@
 
 .image-card-circle {
   position: relative;
-  width: 12vw;
-  height: 12vw;
+  width: 15vw;
+  height: 15vw;
   border-radius: 50%;
+  padding: 0;
+  overflow: hidden;
   background-color: $darkless;
   @include card-shadow;
 
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  //padding: $base-size;
+  //cursor: pointer;
+}
 
-  ul {
-    margin: auto;
-    padding: $base-size;
-    margin-left: $base-size;
+.image-card-img-front {
+  width: 100%;
+  height: 100%;
+
+  img {
+    height: inherit;
+  }
+}
+
+.image-card-back-details {
+  position: absolute;
+  top: $base-size;
+  bottom: $base-size;
+  left: $base-size;
+  right: $base-size;
+  border-radius: 50%;
+
+  margin: 0;
+  padding: 0 $base-size;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background-color: rgba($darkless, .8);
+  opacity: 0;
+  @include simple-hover-timing;
+  transition-delay: .4s;
+
+  cursor: pointer;
+
+  li {
+    padding: $base-down-3 0;
+    //color: $snow;
+  }
+
+  li:first-child {
+    border-bottom: solid 2px $slate;
+  }
+
+  li:last-child {
+    border-top: solid 2px $slate;
+  }
+}
+
+.image-card-back-details:hover {
+  opacity: 1;
+}
+
+.icon-right-list-item {
+  display: flex;
+  align-items: center;
+  i {
+    color: $red;
   }
 }
 
 .image-card-circle::before {
   content: "";
-  width: 12vw;
-  height: 12vw;
-  border-radius: 50%;
-  box-shadow: inset 0 0 0 2px $base-color, inset 0 0 0 8px $blue, inset 0 0 0 16px $darkless;
   position: absolute;
+  width: inherit;
+  height: inherit;
+  border-radius: 50%;
+  box-shadow: /*inset 0 0 0 4px $base-color,*/ inset 0 0 0 8px $blue, inset 0 0 0 16px $darkless;
 }

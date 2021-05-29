@@ -17,7 +17,7 @@
 }
 
 .nav-bar-button::before {
-  border-radius: $base-down-3;
+  border-radius: inherit;
 }
 
 .nav-bar-button::after {
