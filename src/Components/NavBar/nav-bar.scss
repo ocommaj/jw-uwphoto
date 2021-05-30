@@ -3,6 +3,7 @@
 
 .nav-bar {
   position: absolute;
+  z-index: 999;
   height: 4rem;
   top: $base-size;
   right: $base-size;

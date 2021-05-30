@@ -1,7 +1,15 @@
 @use '../../Styles/Abstracts' as *;
 
-.image-card-circle {
+.image-card-wrapper {
   position: relative;
+  width: 15vw;
+  height: 15vw;
+  z-index: 30;
+}
+
+.image-card-circle {
+  position: absolute;
+  z-index: 20;
   width: 15vw;
   height: 15vw;
   border-radius: 50%;
@@ -10,12 +18,48 @@
   background-color: $darkless;
   @include card-shadow;
 
-  //cursor: pointer;
+  @include simple-hover-timing;
+}
+
+.image-card-circle + .active-container {
+  top: 3.75vw;
+  left: 3.75vw;
+}
+
+.image-card-circle.active-select {
+  box-shadow: 0 -2px 8px 2px rgba($drama-color, .4);
+}
+
+.image-card-circle.active-select .image-card-back-details {
+  opacity: 1;
+  background: linear-gradient($darkless, $dark);
+}
+
+.image-card-circle.active-select + .active-container {
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  border-radius: 0;
+
+  transform: translate(-6rem, -6rem);
+}
+
+.active-container {
+  position: absolute;
+  z-index: 10;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: rgba($blue, .2);
+  filter: blur($base-up-2);
+  @include simple-hover-timing;
 }
 
 .image-card-img-front {
   width: 100%;
   height: 100%;
+  @include simple-hover-timing;
 
   img {
     height: inherit;
@@ -30,27 +74,34 @@
   right: $base-size;
   border-radius: 50%;
 
+
   margin: 0;
   padding: 0 $base-size;
+  padding-left: $base-up-2;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
 
-  background-color: rgba($darkless, .8);
+  background: linear-gradient(rgba($darkless, .8), rgba($dark, .8));
   opacity: 0;
   @include simple-hover-timing;
-  transition-delay: .4s;
+  transition-delay: .1s;
+  border: solid 2px $slate;
 
   cursor: pointer;
 
   li {
     padding: $base-down-3 0;
-    //color: $snow;
+    color: $snow;
   }
 
   li:first-child {
     border-bottom: solid 2px $slate;
+  }
+
+  li:nth-child(2) {
+    color: darken($snow, 10);
   }
 
   li:last-child {
@@ -67,6 +118,8 @@
   align-items: center;
   i {
     color: $red;
+    margin-left: $base-down-4;
+    @include text-shadow;
   }
 }
 
@@ -76,5 +129,6 @@
   width: inherit;
   height: inherit;
   border-radius: 50%;
-  box-shadow: /*inset 0 0 0 4px $base-color,*/ inset 0 0 0 8px $blue, inset 0 0 0 16px $darkless;
+  box-shadow: inset 0 0 0 8px rgba($blue, .6), inset 0 0 0 16px $darkless;
+  @include simple-hover-timing;
 }
