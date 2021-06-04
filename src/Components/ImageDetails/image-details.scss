@@ -1,0 +1,23 @@
+@use '../../Styles/Abstracts' as *;
+
+.image-details {
+  //position: absolute;
+  //z-index: 20;
+  //background-color: green;
+  //display: block;
+  //color: red;
+  //padding: 0;
+  //margin: 0;
+}
+
+.test {
+  position: absolute;
+  //z-index: 50;
+}
+
+.full-image {
+  position: absolute;
+  z-index: 21;
+  width: auto;
+  height: auto;
+}
